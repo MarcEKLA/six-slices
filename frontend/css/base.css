@@ -1,0 +1,107 @@
+/* Base du site : couleurs, textes, boutons, fenêtres.
+   Les couleurs de la palette sont dans :root (ex : var(--orange)). */
+
+:root {
+  --red: #6D0101;
+  --pink: #EFC6E9;
+  --blue: #C0D6FF;
+  --orange: #F88C2F;
+  --yellow: #FCF4C0;
+  --mauve: #3B174F;
+  --white: #ffffff;
+  --right: #1d7a46; /* vert des boutons "Right" et "Success" */
+
+  --line: 2.5px solid var(--mauve);
+  --shadow: 5px 5px 0 var(--mauve);
+  --radius: 18px;
+
+  --font-display: "Shrikhand", "Cooper Black", Georgia, serif;
+  --font-body: "Lexend", "Segoe UI", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  font-family: var(--font-body);
+  color: var(--mauve);
+  background: var(--yellow);
+  min-height: 100vh;
+  font-size: 16px;
+  line-height: 1.45;
+}
+[hidden] { display: none !important; }
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--white);
+  -webkit-text-stroke: 2px var(--mauve);
+  paint-order: stroke fill;
+  text-shadow: 3px 3px 0 var(--mauve);
+  letter-spacing: 0.01em;
+}
+.muted { color: color-mix(in srgb, var(--mauve) 72%, transparent); }
+
+.sheet {
+  background: var(--white);
+  border: var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Boutons */
+.btn {
+  font: 500 1rem/1 var(--font-body);
+  color: var(--mauve);
+  border: var(--line);
+  border-radius: 999px;
+  padding: .7em 1.2em;
+  background: var(--white);
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--mauve);
+  transition: transform .08s, box-shadow .08s;
+}
+.btn:active { transform: translate(3px, 3px); box-shadow: 0 0 0 var(--mauve); }
+.btn:disabled { opacity: .4; cursor: not-allowed; transform: none; box-shadow: 3px 3px 0 var(--mauve); }
+.btn:focus-visible, .tab:focus-visible, .chip:focus-visible, .slice-btn:focus-visible, summary:focus-visible, input:focus-visible {
+  outline: 3px solid var(--orange); outline-offset: 3px;
+}
+.btn-primary { background: var(--orange); font-weight: 700; }
+.btn-ghost { background: var(--white); }
+.btn-big { font-size: 1.15rem; padding: .9em 1.6em; }
+.btn-right { background: var(--right); color: var(--white); font-weight: 700; }
+.btn-wrong { background: var(--red); color: var(--white); font-weight: 700; }
+.btn-next { width: 100%; background: var(--mauve); color: var(--yellow); font-weight: 700; font-size: 1.1rem; box-shadow: 3px 3px 0 var(--orange); }
+
+/* Barre du haut */
+.topbar {
+  display: flex; align-items: center; gap: 1.2rem;
+  padding: .9rem 1.5rem;
+  border-bottom: var(--line);
+  background: var(--pink);
+}
+.logo {
+  margin: 0; font-size: 2rem;
+  font-family: var(--font-display); font-weight: 400;
+  color: var(--white); -webkit-text-stroke: 2px var(--mauve); paint-order: stroke fill;
+  text-shadow: 3px 3px 0 var(--mauve);
+}
+.tagline { margin: 0; font-weight: 500; flex: 1; }
+.topbar-actions { display: flex; gap: .6rem; }
+
+/* Composants des designers (images du dossier images/) */
+.component { display: block; object-fit: fill; }
+.component.missing { border: 1.5px dashed var(--mauve); border-radius: 4px; opacity: .6; }
+
+/* Messages (toast), écran de victoire, perte de connexion */
+.toast {
+  position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+  background: var(--mauve); color: var(--yellow); padding: .8rem 1.3rem; border-radius: 999px;
+  font-weight: 500; box-shadow: 4px 4px 0 var(--orange); z-index: 20; max-width: 90vw;
+}
+.toast.is-error { background: var(--red); color: var(--white); }
+.winner { position: fixed; inset: 0; background: color-mix(in srgb, var(--mauve) 55%, transparent); display: grid; place-items: center; z-index: 30; padding: 1rem; }
+.winner-card { padding: 2rem 2.5rem; text-align: center; background: var(--pink); max-width: 480px; }
+.winner-plate .plate { width: 140px; height: 140px; }
+.winner-title { font-size: 3.2rem; margin: 0 0 .3rem; overflow-wrap: anywhere; }
+.offline { position: fixed; top: 0; left: 0; right: 0; margin: 0; background: var(--red); color: var(--white); text-align: center; padding: .4rem; z-index: 40; }

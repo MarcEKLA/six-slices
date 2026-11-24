@@ -1,0 +1,6 @@
+/* Polices du site, incluses dans le dossier fonts/ (le site marche sans Internet) */
+
+@font-face { font-family: "Shrikhand"; src: url("../fonts/shrikhand-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Lexend"; src: url("../fonts/lexend-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Lexend"; src: url("../fonts/lexend-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Lexend"; src: url("../fonts/lexend-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }

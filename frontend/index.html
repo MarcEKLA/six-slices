@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SIX Slices – Game support</title>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/setup.css">
+  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- ===== Barre du haut ===== -->
+  <header class="topbar">
+    <h1 class="logo">SIX Slices</h1>
+    <p class="tagline">Your quest: 6 pieces, 6 digital jobs.</p>
+    <div class="topbar-actions">
+      <button class="btn btn-ghost" id="undoBtn" type="button">Undo</button>
+      <button class="btn btn-ghost" id="newGameBtn" type="button">New game</button>
+    </div>
+  </header>
+
+  <!-- ===== Écran de départ (js/setupScreen.js) ===== -->
+  <main id="setup" class="setup" hidden>
+    <form id="setupForm" class="sheet setup-sheet">
+      <h2 class="display">Who's playing?</h2>
+      <p class="muted">2 to 6 players or teams. The board game works without this screen: it only keeps time and counts XP.</p>
+      <ol id="nameList" class="name-list"></ol>
+      <div class="setup-row">
+        <button class="btn btn-ghost" type="button" id="addPlayer">Add a player</button>
+        <label class="timer-field">Timer
+          <input type="number" id="timerSeconds" min="5" max="600" value="30"> s
+        </label>
+      </div>
+      <p class="form-error" id="setupError" role="alert"></p>
+      <button class="btn btn-primary btn-big" type="submit">Start the game</button>
+    </form>
+  </main>
+
+  <!-- ===== Écran de jeu ===== -->
+  <main id="game" class="game" hidden>
+    <!-- Gauche : tableau des XP (js/playersList.js) -->
+    <section class="players" aria-label="Players and XP">
+      <h2 class="col-title">XP board</h2>
+      <ul id="playerList" class="player-list"></ul>
+    </section>
+
+    <!-- Milieu : plateau (js/board.js) -->
+    <section class="board" id="board" aria-label="Game board"></section>
+
+    <!-- Droite : joueur en cours, timer (js/timer.js) et actions (js/turnActions.js) -->
+    <section class="control" aria-label="Turn">
+      <div class="turn-card sheet" id="turnCard">
+        <p class="turn-label">Now playing</p>
+        <p class="turn-name display" id="turnName">–</p>
+
+        <div class="timer" id="timer">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="timer-track" cx="60" cy="60" r="52"/>
+            <circle class="timer-ring" id="timerRing" cx="60" cy="60" r="52"/>
+          </svg>
+          <span class="timer-value display" id="timerValue" aria-live="polite">30</span>
+        </div>
+        <div class="timer-buttons">
+          <button class="btn btn-primary" id="timerToggle" type="button">Start</button>
+          <button class="btn btn-ghost" id="timerReset" type="button">Reset</button>
+        </div>
+      </div>
+
+      <div class="actions sheet">
+        <div class="tabs" role="tablist">
+          <button role="tab" class="tab" data-tab="question" aria-selected="true">Question</button>
+          <button role="tab" class="tab" data-tab="mission" aria-selected="false">HQ mission</button>
+          <button role="tab" class="tab" data-tab="hack" aria-selected="false">Hack Alert!</button>
+          <button role="tab" class="tab" data-tab="bonus" aria-selected="false">XP bonus</button>
+        </div>
+
+        <div class="panel" data-panel="question">
+          <p class="panel-help">Pick the level, then mark the answer.</p>
+          <div class="level-picker" id="levelPicker"></div>
+          <div class="answer-row">
+            <button class="btn btn-right" data-answer="right" type="button">Right</button>
+            <button class="btn btn-wrong" data-answer="wrong" type="button">Wrong</button>
+          </div>
+        </div>
+
+        <div class="panel" data-panel="mission" hidden>
+          <p class="panel-help">Which HQ? A success wins its slice.</p>
+          <div class="cat-picker" id="missionPicker"></div>
+          <div class="answer-row">
+            <button class="btn btn-right" data-mission="success" type="button">Success</button>
+            <button class="btn btn-wrong" data-mission="fail" type="button">Failed</button>
+          </div>
+        </div>
+
+        <div class="panel" data-panel="hack" hidden>
+          <p class="panel-help">Safe or scam? A right answer gives +2 XP. A wrong one lets the hacker steal a slice.</p>
+          <div class="answer-row">
+            <button class="btn btn-right" data-hack="right" type="button">Right +2 XP</button>
+            <button class="btn btn-wrong" data-hack="wrong" type="button">Wrong</button>
+          </div>
+          <div class="steal" id="stealBox" hidden>
+            <p class="panel-help">Pick the slice the hacker steals, or block him for 3 XP.</p>
+            <div class="cat-picker" id="stealPicker"></div>
+            <button class="btn btn-ghost" id="blockBtn" type="button">Block the hacker (−3 XP)</button>
+          </div>
+        </div>
+
+        <div class="panel" data-panel="bonus" hidden>
+          <p class="panel-help">Spend 3 XP for a bonus.</p>
+          <div class="answer-row">
+            <button class="btn btn-ghost" data-bonus="reroll" type="button">Roll again</button>
+            <button class="btn btn-ghost" data-bonus="change" type="button">Change question</button>
+          </div>
+        </div>
+
+        <div class="final-box" id="finalBox" hidden>
+          <p class="panel-help"><strong>6 slices!</strong> Back at the center: the others pick the color of an Expert question.</p>
+          <div class="answer-row">
+            <button class="btn btn-right" data-final="right" type="button">Right: winner</button>
+            <button class="btn btn-wrong" data-final="wrong" type="button">Wrong</button>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="nextBtn" type="button">Next player</button>
+      </div>
+
+      <details class="log sheet">
+        <summary>Game log</summary>
+        <ol id="logList"></ol>
+      </details>
+    </section>
+  </main>
+
+  <!-- ===== Messages et fenêtres ===== -->
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <div class="winner" id="winner" hidden>
+    <div class="winner-card sheet">
+      <div class="winner-plate" id="winnerPlate"></div>
+      <p class="display winner-title" id="winnerName"></p>
+      <p>has the 6 slices and wins the quest.</p>
+      <p class="muted">Debrief: which job would you like to try? Say it in English!</p>
+      <button class="btn btn-primary btn-big" id="winnerNew" type="button">New game</button>
+    </div>
+  </div>
+
+  <p class="offline" id="offline" hidden>Connection lost with the server. Reconnecting…</p>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
