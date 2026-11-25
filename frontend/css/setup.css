@@ -1,0 +1,19 @@
+/* Écran de départ : "Who's playing?" */
+
+.setup { display: grid; place-items: center; padding: 3rem 1rem; }
+.setup-sheet { width: min(560px, 100%); padding: 2rem; display: grid; gap: 1rem; }
+.setup-sheet h2 { margin: 0; font-size: 2.4rem; }
+.setup-sheet p { margin: 0; }
+.name-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .6rem; }
+.name-list li { display: flex; gap: .6rem; align-items: center; }
+.name-list .dot { width: 34px; height: 34px; flex: none; }
+.name-list .dot .plate { width: 100%; height: 100%; }
+.name-list input, .timer-field input {
+  font: inherit; color: inherit;
+  border: var(--line); border-radius: 12px; padding: .55em .8em; background: var(--white); width: 100%;
+}
+.name-list .remove { border: none; background: none; font: inherit; color: var(--red); cursor: pointer; padding: .4em; }
+.setup-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.timer-field { display: flex; align-items: center; gap: .4rem; font-weight: 500; }
+.timer-field input { width: 5em; }
+.form-error { color: var(--red); font-weight: 500; min-height: 1.2em; }
