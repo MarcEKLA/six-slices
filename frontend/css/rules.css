@@ -1,0 +1,77 @@
+.rules {
+  max-width: 760px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  color: var(--mauve);
+}
+
+.rules .quest {
+  font-size: 1.2rem;
+  color: var(--orange);
+  font-weight: bold;
+}
+
+.rules-block {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--yellow);
+  border-left: 8px solid var(--orange);
+  border-radius: 8px;
+}
+
+.rules-block h2 {
+  margin-top: 0;
+  color: var(--mauve);
+}
+
+.rules-block ul {
+  padding-left: 1.2rem;
+}
+
+/* Table of levels */
+.levels table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.levels th,
+.levels td {
+  padding: 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid var(--mauve);
+}
+
+.levels th {
+  background: var(--mauve);
+  color: var(--yellow);
+}
+
+.levels .newbie td { background: var(--blue); }
+.levels .junior td { background: var(--pink); }
+.levels .expert td { background: var(--orange); }
+
+/* Categories */
+.cat-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.cat {
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  color: var(--mauve);
+}
+
+.cat.marketing { background: var(--pink); }
+.cat.social    { background: var(--blue); }
+.cat.dev       { background: var(--orange); }
+.cat.design    { background: var(--pink); }
+.cat.ux        { background: var(--blue); }
+.cat.data      { background: var(--orange); }
+
+.rules .btn {
+  display: inline-block;
+  margin-top: 2rem;
+}
