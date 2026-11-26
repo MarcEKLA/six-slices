@@ -1,0 +1,16 @@
+/* Adaptation tablette et téléphone */
+
+@media (max-width: 1150px) {
+  .game { grid-template-columns: 1fr 1fr; }
+  .board { grid-column: 1 / -1; order: -1; min-height: 360px; }
+}
+@media (max-width: 720px) {
+  .game { grid-template-columns: 1fr; padding: 1rem; }
+  .tagline { display: none; }
+  .logo { font-size: 1.5rem; }
+  .control { order: -1; }
+  .board { order: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
