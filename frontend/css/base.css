@@ -16,7 +16,20 @@
   --radius: 18px;
 
   --font-display: "Shrikhand", "Cooper Black", Georgia, serif;
-  --font-body: "Lexend", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Gluten", "Segoe UI", system-ui, sans-serif;
+s  /* Espacements : toujours ces valeurs, pour un rendu régulier */
+  --space-xs: .5rem;
+  --space-s: .75rem;
+  --space-m: 1rem;
+  --space-l: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  /* Largeur des 3 colonnes (utilisée par la barre du haut ET l'écran de jeu) */
+  --col-left: 300px;
+  --col-right: 360px;
+  --col-gap: var(--space-xl);
+  --page-padding: var(--space-xl);
 }
 
 * { box-sizing: border-box; }
@@ -27,17 +40,16 @@ body {
   background: var(--yellow);
   min-height: 100vh;
   font-size: 16px;
-  line-height: 1.45;
+  font-weight: 500;
+  line-height: 1.5;
 }
 [hidden] { display: none !important; }
 
 .display {
   font-family: var(--font-display);
   font-weight: 400;
-  color: var(--white);
-  -webkit-text-stroke: 2px var(--mauve);
-  paint-order: stroke fill;
-  text-shadow: 3px 3px 0 var(--mauve);
+  color: var(--mauve);
+  text-shadow: 2px 2px 0 var(--yellow);
   letter-spacing: 0.01em;
 }
 .muted { color: color-mix(in srgb, var(--mauve) 72%, transparent); }
@@ -51,11 +63,12 @@ body {
 
 /* Boutons */
 .btn {
-  font: 500 1rem/1 var(--font-body);
+  font: 700 1rem/1 var(--font-body);
+  text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
   color: var(--mauve);
   border: var(--line);
   border-radius: 999px;
-  padding: .7em 1.2em;
+  padding: .75em 1.3em;
   background: var(--white);
   cursor: pointer;
   box-shadow: 3px 3px 0 var(--mauve);
@@ -74,20 +87,25 @@ body {
 .btn-next { width: 100%; background: var(--mauve); color: var(--yellow); font-weight: 700; font-size: 1.1rem; box-shadow: 3px 3px 0 var(--orange); }
 
 /* Barre du haut */
+/* La barre du haut suit les 3 colonnes de l'écran de jeu :
+   logo au-dessus des joueurs, phrase au-dessus du plateau, boutons au-dessus du tour */
 .topbar {
-  display: flex; align-items: center; gap: 1.2rem;
-  padding: .9rem 1.5rem;
+  display: grid;
+  grid-template-columns: var(--col-left) 1fr var(--col-right);
+  gap: var(--col-gap);
+  align-items: center;
+  padding: var(--space-l) var(--page-padding);
   border-bottom: var(--line);
   background: var(--pink);
 }
 .logo {
-  margin: 0; font-size: 2rem;
+  margin: 0; font-size: 2rem; white-space: nowrap;
   font-family: var(--font-display); font-weight: 400;
-  color: var(--white); -webkit-text-stroke: 2px var(--mauve); paint-order: stroke fill;
-  text-shadow: 3px 3px 0 var(--mauve);
+  color: var(--mauve); text-shadow: 2px 2px 0 var(--yellow);
 }
-.tagline { margin: 0; font-weight: 500; flex: 1; }
-.topbar-actions { display: flex; gap: .6rem; }
+.tagline { margin: 0; font-weight: 600; font-size: 1.2rem; }
+.topbar-actions { display: flex; gap: var(--space-xs); justify-content: flex-end; }
+.topbar-actions .btn { font-size: .9rem; padding: .6em 1em; white-space: nowrap; }
 
 /* Composants des designers (images du dossier images/) */
 .component { display: block; object-fit: fill; }

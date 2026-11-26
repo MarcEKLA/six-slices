@@ -16,6 +16,7 @@
     <h1 class="logo">SIX Slices</h1>
     <p class="tagline">Your quest: 6 pieces, 6 digital jobs.</p>
     <div class="topbar-actions">
+      <a class="btn btn-ghost" href="rules.html" id="rulesLink">How to play</a>
       <button class="btn btn-ghost" id="undoBtn" type="button">Undo</button>
       <button class="btn btn-ghost" id="newGameBtn" type="button">New game</button>
     </div>
@@ -41,13 +42,19 @@
   <!-- ===== Écran de jeu ===== -->
   <main id="game" class="game" hidden>
     <!-- Gauche : tableau des XP (js/playersList.js) -->
-    <section class="players" aria-label="Players and XP">
+    <section class="players sheet" aria-label="Players and XP">
       <h2 class="col-title">XP board</h2>
       <ul id="playerList" class="player-list"></ul>
     </section>
 
-    <!-- Milieu : plateau (js/board.js) -->
-    <section class="board" id="board" aria-label="Game board"></section>
+    <!-- Milieu : gâteau du joueur en cours (js/board.js) + historique de la partie -->
+    <div class="center">
+      <section class="board" id="board" aria-label="Current player"></section>
+      <section class="log sheet" aria-label="Game log">
+        <h2 class="col-title log-title">Game log</h2>
+        <ol id="logList"></ol>
+      </section>
+    </div>
 
     <!-- Droite : joueur en cours, timer (js/timer.js) et actions (js/turnActions.js) -->
     <section class="control" aria-label="Turn">
@@ -126,10 +133,6 @@
         <button class="btn btn-next" id="nextBtn" type="button">Next player</button>
       </div>
 
-      <details class="log sheet">
-        <summary>Game log</summary>
-        <ol id="logList"></ol>
-      </details>
     </section>
   </main>
 

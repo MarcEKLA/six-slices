@@ -1,10 +1,10 @@
 /* Écran de départ : "Who's playing?" */
 
-.setup { display: grid; place-items: center; padding: 3rem 1rem; }
-.setup-sheet { width: min(560px, 100%); padding: 2rem; display: grid; gap: 1rem; }
+.setup { display: grid; place-items: center; padding: var(--space-2xl) var(--space-m); }
+.setup-sheet { width: min(560px, 100%); padding: var(--space-xl); display: grid; gap: var(--space-l); }
 .setup-sheet h2 { margin: 0; font-size: 2.4rem; }
 .setup-sheet p { margin: 0; }
-.name-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .6rem; }
+.name-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-s); }
 .name-list li { display: flex; gap: .6rem; align-items: center; }
 .name-list .dot { width: 34px; height: 34px; flex: none; }
 .name-list .dot .plate { width: 100%; height: 100%; }
