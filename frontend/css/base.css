@@ -123,3 +123,6 @@ body {
 .winner-plate .plate { width: 140px; height: 140px; }
 .winner-title { font-size: 3.2rem; margin: 0 0 .3rem; overflow-wrap: anywhere; }
 .offline { position: fixed; top: 0; left: 0; right: 0; margin: 0; background: var(--red); color: var(--white); text-align: center; padding: .4rem; z-index: 40; }
+
+/* Confettis (js/confetti.js) : par-dessus tout, sans bloquer les clics */
+.confetti { position: fixed; inset: 0; pointer-events: none; z-index: 50; }
