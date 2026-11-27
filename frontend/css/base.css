@@ -103,6 +103,7 @@ body {
   font-family: var(--font-display); font-weight: 400;
   color: var(--mauve); text-shadow: 2px 2px 0 var(--yellow);
 }
+.logo img { display: block; width: 96px; height: 96px; }
 .tagline { margin: 0; font-weight: 600; font-size: 1.2rem; }
 .topbar-actions { display: flex; gap: var(--space-xs); justify-content: flex-end; }
 .topbar-actions .btn { font-size: .9rem; padding: .6em 1em; white-space: nowrap; }
