@@ -30,17 +30,14 @@ export function showMessage(text, isError = false) {
 }
 
 // Lance un appel au serveur, met à jour l'écran, et affiche un message
-// Renvoie true si l'action a marché, false sinon
 export async function doAction(apiCall, successMessage) {
- try {
- const game = await apiCall;
- setGame(game);
- if (successMessage) {
- showMessage(successMessage);
- }
- return true;
- } catch (error) {
- showMessage(error.message, true);
- return false;
- }
+  try {
+    const game = await apiCall;
+    setGame(game);
+    if (successMessage) {
+      showMessage(successMessage);
+    }
+  } catch (error) {
+    showMessage(error.message, true);
+  }
 }
