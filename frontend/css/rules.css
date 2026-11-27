@@ -5,6 +5,13 @@
   color: var(--mauve);
 }
 
+.rules-logo {
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1rem;
+}
+
 .rules .quest {
   font-size: 1.2rem;
   color: var(--orange);
@@ -46,9 +53,13 @@
   color: var(--yellow);
 }
 
-.levels .newbie td { background: var(--blue); }
-.levels .junior td { background: var(--pink); }
+.levels .newbie td { background: var(--pink); }
+.levels .junior td { background: var(--blue); }
 .levels .expert td { background: var(--orange); }
+
+.levels ul {
+  margin-bottom: 0;
+}
 
 /* Categories */
 .cat-list {
@@ -64,12 +75,12 @@
   color: var(--mauve);
 }
 
-.cat.marketing { background: var(--pink); }
-.cat.social    { background: var(--blue); }
-.cat.dev       { background: var(--orange); }
-.cat.design    { background: var(--pink); }
-.cat.ux        { background: var(--blue); }
-.cat.data      { background: var(--orange); }
+.cat.marketing { background: var(--orange); }
+.cat.social    { background: var(--pink); }
+.cat.dev       { background: var(--blue); }
+.cat.design    { background: var(--yellow); border: 1px solid var(--mauve); }
+.cat.ux        { background: var(--red); color: var(--white); }
+.cat.data      { background: var(--mauve); color: var(--white); }
 
 .rules .btn {
   display: inline-block;

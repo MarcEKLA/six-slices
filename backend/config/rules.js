@@ -23,10 +23,11 @@ const CATEGORIES = [
 ];
 
 // Niveaux des questions et XP gagnés si la réponse est juste
+// card = nom écrit sur les cartes imprimées (Easy, Medium, Hard)
 const LEVELS = [
-  { id: 'newbie', name: 'Newbie', fr: 'Débutant', xp: 1 },
-  { id: 'junior', name: 'Junior', fr: 'Intermédiaire', xp: 2 },
-  { id: 'expert', name: 'Expert', fr: 'Expert', xp: 3 },
+  { id: 'newbie', name: 'Newbie', card: 'Easy', xp: 1 },
+  { id: 'junior', name: 'Junior', card: 'Medium', xp: 2 },
+  { id: 'expert', name: 'Expert', card: 'Hard', xp: 3 },
 ];
 
 // Hack Alert! : XP gagnés si le joueur repère l'arnaque

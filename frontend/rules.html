@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>How to play - SIX Slices</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/rules.css">
@@ -12,57 +14,93 @@
   <main class="sheet rules">
 
     <header>
-      <h1 class="display">How to play</h1>
-      <p class="quest">Your quest: 6 pieces, 6 digital jobs.</p>
+      <a href="index.html"><img class="rules-logo" src="images/logo.png" alt="SIX Slices" width="120" height="120"></a>
+      <h1 class="display">Game Rules</h1>
+      <p class="quest">Are you ready to cook?</p>
+      <p>2 to 6 players, 45 to 60 minutes, age 15+. English level: A2 - B1.</p>
     </header>
 
     <section class="rules-block goal">
-      <h2>The goal</h2>
-      <p>Win the 6 pieces, one for each digital job.</p>
-      <p>Then go back to the center and answer the final question.</p>
+      <h2>Goal</h2>
+      <p>Fill your hexagon with the 6 quest pieces (one per color), then win the final question at the center of the board.</p>
+    </section>
+
+    <section class="rules-block components">
+      <h2>Components</h2>
+      <ul>
+        <li>One board, one die and one 30-second sand timer</li>
+        <li>6 pawns and 6 player hexagons</li>
+        <li>36 quest pieces (6 per color)</li>
+        <li>Question cards (3 decks), Mission cards and Hack Alert! cards</li>
+        <li>6 Job cards</li>
+        <li>XP tokens</li>
+      </ul>
+    </section>
+
+    <section class="rules-block setup">
+      <h2>Setup</h2>
+      <ul>
+        <li>Each player places their cake-slice pawn at the center of the board, on the color of their large cake. Everyone starts with 0 XP.</li>
+        <li>Place the Hack Alert! cards and the Mission cards on the board.</li>
+        <li>The youngest player starts.</li>
+      </ul>
     </section>
 
     <section class="rules-block turn">
-      <h2>A turn</h2>
-      <p>First, roll the die. Then look at your square:</p>
+      <h2>On your turn</h2>
+      <p>Roll the die, move in any direction, then look at your square:</p>
       <ul>
-        <li><strong>Color square:</strong> answer a question from this category.</li>
-        <li><strong>HQ:</strong> do a mission in 30 seconds.</li>
-        <li><strong>Hack Alert!</strong> A hacker attacks you. Be careful!</li>
-        <li><strong>Roll again:</strong> lucky you! Roll the die one more time.</li>
+        <li><strong>Color square:</strong> answer a question of that color. Right: earn XP and play again.</li>
+        <li><strong>Headquarters:</strong> complete a Mission in 30 seconds. Success: win the quest piece and read the Job card aloud.</li>
+        <li><strong>Hack Alert!</strong> "Safe" or "Scam"? Right: +2 XP. Wrong: the hacker steals one of your quest pieces.</li>
+        <li><strong>Roll again:</strong> roll the die again.</li>
       </ul>
     </section>
 
     <section class="rules-block levels">
-      <h2>The 3 levels</h2>
+      <h2>Questions: 3 levels</h2>
+      <p>Before the question, choose your level. Another player draws a card from that deck and reads you the question for your color. The answer is on the back.</p>
       <table>
         <thead>
-          <tr><th>Level</th><th>How it works</th><th>Reward</th></tr>
+          <tr><th>Level</th><th>Question</th><th>Reward</th></tr>
         </thead>
         <tbody>
-          <tr class="newbie"><td>Newbie</td><td>Multiple choice (QCM)</td><td>+1 XP</td></tr>
-          <tr class="junior"><td>Junior</td><td>With a hint</td><td>+2 XP</td></tr>
-          <tr class="expert"><td>Expert</td><td>No help</td><td>+3 XP</td></tr>
+          <tr class="newbie"><td>Easy</td><td>Multiple choice, 3 answers</td><td>1 XP</td></tr>
+          <tr class="junior"><td>Medium</td><td>Question with a clue</td><td>2 XP</td></tr>
+          <tr class="expert"><td>Hard</td><td>Question with no help</td><td>3 XP</td></tr>
         </tbody>
       </table>
     </section>
 
+    <section class="rules-block missions">
+      <h2>Missions</h2>
+      <p>A small challenge from the job: invent a slogan, write a post, put code in the right order...</p>
+      <p>The other players vote with a thumbs up, or you check the answer on the card.</p>
+    </section>
+
     <section class="rules-block xp">
       <h2>XP</h2>
-      <p>With 3 XP, you can:</p>
+      <p>Each bonus costs 3 XP:</p>
       <ul>
-        <li>roll the die again,</li>
-        <li>change your question,</li>
-        <li>block the hacker.</li>
+        <li>Roll the die again</li>
+        <li>Change your question</li>
+        <li>Block the hacker (antivirus)</li>
       </ul>
     </section>
 
+    <section class="rules-block final">
+      <h2>Winning</h2>
+      <p>With your 6 quest pieces, go to the center.</p>
+      <p>The other players choose the color of a Hard question. If you get it right, you win! If not, try again on your next turn.</p>
+      <p>To finish, everyone says which job they would like to try.</p>
+    </section>
+
     <section class="rules-block categories">
-      <h2>The 6 categories</h2>
+      <h2>Reminder: the 6 colors</h2>
       <ul class="cat-list">
-        <li class="cat marketing"><strong>Marketing</strong> - Marketing Manager</li>
+        <li class="cat marketing"><strong>Marketing</strong> - Digital Marketer</li>
         <li class="cat social"><strong>Social Media</strong> - Community Manager</li>
-        <li class="cat dev"><strong>Development</strong> - Developer</li>
+        <li class="cat dev"><strong>Development</strong> - Software Developer</li>
         <li class="cat design"><strong>Design</strong> - Graphic Designer</li>
         <li class="cat ux"><strong>UX/UI</strong> - UX/UI Designer</li>
         <li class="cat data"><strong>Data &amp; AI</strong> - Data Analyst</li>

@@ -17,7 +17,7 @@
 
   --font-display: "Shrikhand", "Cooper Black", Georgia, serif;
   --font-body: "Gluten", "Segoe UI", system-ui, sans-serif;
-s  /* Espacements : toujours ces valeurs, pour un rendu régulier */
+  /* Espacements : toujours ces valeurs, pour un rendu régulier */
   --space-xs: .5rem;
   --space-s: .75rem;
   --space-m: 1rem;

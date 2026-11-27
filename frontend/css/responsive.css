@@ -14,6 +14,7 @@
   .game { grid-template-columns: 1fr; }
   .tagline { display: none; }
   .logo { font-size: 1.5rem; }
+  .logo img { width: 64px; height: 64px; }
   .control { order: -1; }
   .center { order: 0; }
 }
