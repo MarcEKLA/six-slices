@@ -69,5 +69,3 @@ export function launchConfetti(amount = 140) {
 }
 
 
-/* Confettis (js/confetti.js) : par-dessus tout, sans bloquer les clics */
-.confetti { position: fixed; inset: 0; pointer-events: none; z-index: 50; }
